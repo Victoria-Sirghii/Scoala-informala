@@ -1,0 +1,91 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 30px 70px;
+}
+
+.coloana{
+   width: 400px;
+   text-align: center;
+}
+
+h3{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p{
+    margin: 20px;
+    font-size: 13px;
+    color: #808080;
+    font-family: 'Open Sans', sans-serif;
+    width: 300px;
+}
+    
+img{
+    width: 350px;
+    height: 350px;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.rating{
+   color: #f69c2d;
+}
+
+.rating:hover{
+    color: #bbbbbb;
+}
+
+.heart{
+    color: #e9ecef;
+    margin: 0px 20px;
+}
+
+.heart:hover{
+    color: #ef3c36;
+}
+
+#redHeart{
+    color: #ef3c36;
+}
+#redHeart:hover{
+    color: #bbbbbb;
+}
+
+span{
+    color: #808080;
+    margin-left: 10px;
+}
+
+.customizeButton{
+    box-sizing: border-box;
+    padding: 5px 20px;
+    margin: 0px 5px;
+    border-radius: 0%;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    font-weight: 900;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.customizeButton:hover {
+    box-shadow: 0 4px 4px 0 rgba(184, 184, 184, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);}
+
+#whiteButton{
+    background-color: white;
+    color: black;
+}
