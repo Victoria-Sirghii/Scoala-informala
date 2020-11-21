@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    background-color: rgb(247, 247, 247);
+   
+}
+
+.modalForm{
+    width: 320px;
+    height: 280px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -160px;
+    margin-top: -160px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.top-elements{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 20px
+
+}
+#iconClose{
+    color: gray;
+    cursor: pointer;
+}
+
+.formular{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    font-size: 15px;
+
+}
+
+label{
+    margin-bottom: 10px;
+    
+}
+
+#name{
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid rgb(184, 183, 183);
+    border-radius: 2px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.btn{
+    font-size: 15px;
+    padding: 10px;
+    background-color: white;
+    color: #5151cc;
+    border: hidden;
+    margin: 5px;
+}
+
+.btn:hover{
+    background-color: rgb(84, 84, 196);
+    color: white;
+    border-radius: 2px;
+}
+
+

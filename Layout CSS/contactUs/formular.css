@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.topElements{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(230, 227, 227);
+    padding: 30px 30px 30px 200px;
+    font-family: 'Roboto', sans-serif; 
+    flex-wrap: wrap;
+}
+
+.topElements h2{
+    color: rgb(136, 134, 134);
+    align-self: flex-end;
+    margin-left: 10px;
+    margin-bottom: 3px;
+
+}
+
+.mainSection{
+    width: 700px;
+    height: 250px;
+    border: 1px solid black;
+    background-color: rgb(230, 227, 227);
+    margin: 30px auto;
+    border-radius: 3px;
+    border: 1px solid rgb(189, 189, 189);
+    font-family: sans-serif; 
+
+}
+.contactForm{
+    position: relative;
+
+}
+.containerInfo{
+    display: flex;
+    font-weight: bold;
+    padding: 15px;
+   
+}
+
+.userInformation{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.userInformation input{
+    margin: 5px 20px 5px 5px;
+    padding: 5px 0;
+    border-radius: 3px;
+    border: 1px solid rgb(189, 189, 189);
+}
+
+.userMessage{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    flex-wrap: wrap;
+    
+}
+.userMessage label{
+    margin-bottom: 5px;
+}
+
+#messageText{
+    border-radius: 3px;
+    border: 1px solid rgb(189, 189, 189);
+    color: rgb(168, 167, 167);
+    padding: 5px 0px 0px 10px;  
+}
+
+.sentBtn{
+    cursor: pointer;
+    background-color: rgb(65, 121, 204);
+    color: white;
+    border-radius: 3px;
+    padding: 8px;
+    position: absolute;
+    right: 15px;
+    border: 1px solid rgb(65, 121, 204);
+}
+
+.contactNetwork{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif; 
+
+}
+
+.horizontalLine{
+    width: 400px;
+    margin-top: 10px;
+    border-top: 1px solid rgb(202, 202, 202);
+}
+
+.socialNetworks a{
+    text-decoration: none;
+    color: rgb(65, 121, 204);
+
+}
+.socialNetworks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    padding: 20px;
+}
