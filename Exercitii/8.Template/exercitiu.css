@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 7px 6px 0 rgba(218, 216, 216, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-menu .item-1{
+    margin: 20px 0px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+         
+}
+
+.menu-list{
+    display: flex;
+    list-style-type: none;
+    margin-right: 90px;
+      
+}
+
+.menu-list a{
+    padding: 25px 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    color: #808080;
+}
+.menu-list a:hover{
+    background-color: #01cb91;
+}
+
+.emptySpace{
+    background-color: #01cb91;
+    padding: 2px;
+}
+
+.phone{
+    display: flex;
+}
+
+.phoneIcon{
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 8px;
+    background-color: #01cb91;
+    color: white;
+    border: 1px solid #01cb91;
+}
+
+.phoneNumber{
+    align-self: center;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #808080;
+}
+
+.columns-container{
+    display: flex;
+    justify-content: center;
+    margin: 90px 100px;
+}
+
+.columns{
+    width: 600px;
+    margin: 0 10px;
+    border: 0.5px solid rgb(199, 200, 202);
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.columns .circle{
+    box-sizing: border-box;
+    margin: 5px 5px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #3951a7;
+    color: white;
+    width: 50px;
+    font-size: 20px;
+}
+
+.columns h3{
+    margin: 15px 0;
+}
+
+.columns p{
+    color: #808080;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+

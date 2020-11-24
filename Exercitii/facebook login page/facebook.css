@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    height: 680px;
+    background-color: #f0f2f5;
+    padding: 20px 0px;
+}
+
+.facebookMessage{
+    width: 570px;
+    padding: 180px 10px 20px 10px;
+
+}
+
+.facebookMessage img{
+    margin: -30px;
+    width: 300px;
+}
+
+.facebookMessage p{
+    font-size: 28px;
+    line-height: 32px;
+    width: 500px;
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+  
+}
+
+.loginBox{
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    margin: 100px 0 0;
+    padding: 15px 0 28px;
+    border-radius: 8px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;  
+    background-color: white;
+    box-shadow:0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1)
+}
+
+.loginBox .information{
+    padding: 17px;
+    margin: 5px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 0.5px solid rgb(194, 194, 194);
+}
+
+.loginBox .information:hover{
+    border: 0.5px solid rgb(34, 110, 223);
+    box-shadow: 0 1px 2px rgba(60, 125, 247, 0.1), 0 1px 2px rgba(25, 29, 231, 0.1);
+}
+
+#logIn{
+    padding: 10px;
+    margin: 5px 15px;
+    border-radius: 5px;
+    font-size: 23px;
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #1877f2;
+}
+
+.forgotPassword{
+    text-decoration: none;
+    text-align: center;
+    color: #1877f2;
+    padding: 10px;
+    margin: 5px 15px;
+    font-size: 14px;
+
+}
+
+#newAccount{
+    color: white;
+    padding: 13px ;
+    margin: 20px 30px 0px 90px;
+    border-radius: 5px;
+    font-size: 17px;
+    background-color: #40b328;
+    font-weight: bold;
+    width: 200px;
+    border: 1px solid #40b328;
+}
+
+.line{
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgb(224, 224, 224);
+    width: 360px;
+    margin: 5px 15px;
+    
+}
+
+.outsideBox{
+    text-align: center;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding-top: 30px;
+}
+
+.outsideBox a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+
+footer a{
+    text-decoration: none;
+    color: #737373;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+ 
+}
+
+.language{
+    margin: 20px 150px 10px 125px;
+}
+
+
+footer li{
+    display: inline;
+    margin: 2px;
+}
+
+.language button{
+    width: 30px;
+    font-weight: bold;
+    color: rgb(116, 115, 115);
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.facebookTags{
+    margin: 0px 170px 10px 120px;
+    padding: 5px;
+}
+.facebookTags li{
+    margin-right: 20px;
+}
+footer .line2{
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgb(224, 224, 224);
+    width: 990px;
+    margin: 10px 0px 0px 125px;
+}
+
+.copyright{
+    color: rgb(116, 115, 115);
+    font-size: 12px;
+    margin-left: 125px;
+    margin-bottom: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+
+}
+
+.footerContainer{
+    width: 1320px;
+    display: inline;
+
+}
+
+.iconify{
+   color: rgb(27, 27, 110);
+   width: 15px;
+   padding-top: 2.5px;
+   box-sizing: border-box;
+
+}
