@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #ffb700;
+    color: #fd8703;
+    font-weight: bold;
+    height: 140px;
+
+
+}
+
+.name{
+    position: relative;
+    bottom: -38px;
+    margin: 0;
+    padding-left: 40px;
+    font-size: 110px;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    height: 411px;
+}
+
+.rightSide{
+    background-color: #ffca50;
+    width: 20%;
+}
+
+nav h3{
+    color: #b56206;
+    padding-left: 40px;
+    padding-top: 30px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ul li{
+    color: rgb(5, 5, 184);
+    margin: 10px 0px;
+}
+.buttons{
+    padding-left: 40px;
+    position: relative;
+
+}
+
+.btn{
+    
+    
+}
+ .btn button{
+    padding: 0;
+    background-color: #ffca50;
+    border: 1.5px outset rgb(211, 211, 211);
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.btn img{
+    width: 38px;
+    height: 24px;
+}
+
+.twoRowText{
+    width: 77px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.cssText{
+    font-weight: bold;
+    width: 77px;
+    font-size: 12px;
+}
+
+.check{
+    z-index: 1;
+    position: relative;
+    color: rgb(141, 6, 6);
+    font-size: 20px;
+    right: -69px;
+    top: -20px;
+}
+
+.leftSide{
+    width: 80%;
+    background-color: #fee250;
+    padding: 30px;
+}
+
+.leftSide h1,h2{
+    color: #b56206;
+}
+.leftSide h1{
+    margin: 0;
+}
+
+.leftSide p{
+    font-weight: bold;
+}
+
+.leftSide a{
+    text-decoration: none;
+    color: rgb(10, 75, 196);
+  
+}
+
+footer{
+    background-color: #ffb700;
+    display: flex;
+
+}
+
+footer ul{
+    display: flex;
+    padding: 10px 0px 10px 0px;
+    margin: 0;
+    list-style-type: disc;
+    
+
+}
+
+footer ul li{
+    margin-left: 20px;
+    color: black;
+}
+
+.copyright{
+    padding: 20px 5px 20px 50px;
+    margin: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color:  rgb(10, 75, 196);
+}

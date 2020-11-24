@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.headIcons{
+    padding: 15px;
+    color: rgb(204, 203, 203);
+    border: 2px solid rgb(204, 203, 203);
+}
+.backgroundImg{
+    background-image: url(https://magsbc.com/wp-content/uploads/2018/12/Open-magazine-plus-stack-coffee-tablet-white.jpg);
+
+}
+
+.container{
+    width: 70%;
+    margin: auto;
+}
+
+header{
+    background-color: rgb(178, 221, 250);
+    opacity: 0.8;
+    padding: 40px 0px 20px 40px;
+}
+header h1{
+    margin-bottom: 10px;
+    color: rgb(36, 36, 36);
+}
+
+main{
+    background-color: white;
+    opacity: 0.8;
+    padding: 20px 30px;
+}
+
+.emailBox{
+    background-color: rgb(228, 228, 228);
+    opacity: 0.8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.emailBox input{
+    margin-bottom: 10px; 
+    width: 45%;
+    padding: 5px;
+}
+
+.nameBox{
+    padding: 20px;
+    width: 45%; 
+}
+
+.nameText{
+    display: flex;
+    padding-top: 10px;
+}
+
+.nameText input{
+    padding: 5px;
+    width: 50%;  
+}
+
+.radioBtn{
+    padding: 20px;
+    border-bottom: 1px solid rgb(209, 208, 208);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.radioBtn input{
+    margin: 5px 0;
+}
+
+.submitBtn{
+    padding: 20px;
+    display: flex;
+}
+
+.button{
+    font-weight: bold;
+    padding: 8px 30px;
+    background-color: rgb(178, 221, 250);
+    border: 1px solid rgb(178, 221, 250);
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.option, a {
+    color: rgb(6, 155, 6);
+    align-self: center;
+}

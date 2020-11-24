@@ -1,0 +1,150 @@
+body{
+    background-color: #e0d48a;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    
+}
+
+header{
+    background-image: url("https://www.satsa.com/wp-content/themes/directory/design/img/patterns/green-lights.jpg");
+    height: 140px;
+    position: relative;
+}
+
+header .titleBox{
+    width: 30%;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+header h2{
+    margin-bottom: -10px;
+}
+
+main{
+    background-color: #eae1c0;
+    margin: 10px 0px;
+
+}
+
+nav{
+    background-color: #eae6cb;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 10px;
+    border: 1px solid rgb(202, 202, 202);
+    
+}
+
+nav a{
+    padding: 20px;
+    text-decoration: none;
+    color: rgb(1, 74, 170);
+}
+.emptyDiv{
+    padding-bottom: 5px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;   
+}
+
+.fisrtColumn{
+    width: 25%;
+    margin: 10px 20px 20px 10px
+
+}
+.mainMenu{
+    background-color: #eae6cb;
+
+}
+
+.fisrtColumn .titleBoxMenu{
+    background-color: #bbd92c;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.titleBoxMenu h3{
+    margin: 10px;
+}
+
+.arrow{
+    align-self: center;
+    font-size: 10px;
+    margin: 10px;
+}
+
+.listMenu{
+    list-style-type: none;
+    padding-left: 5px;
+
+}
+
+.listMenu a{
+    color: rgb(0, 34, 78);
+    margin-left: 10px;
+}
+
+.listMenu li{
+    margin-bottom: 5px;
+}
+
+.secondColumn{
+    width: 75%;
+}
+
+.blockAside{
+    background-color: #eae6cb;
+    
+}
+
+.secondColumn{
+    padding: 10px;
+    padding-bottom: 40px;
+    border-left: 1px solid rgb(206, 206, 206);
+}
+
+h3{
+    font-family: 'Roboto', sans-serif;
+}
+
+.otherSections{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.moreInformation{
+    width: 45%;
+
+}
+.subscription{
+    margin-right: 30px;
+}
+
+.otherServices{
+    border-left: 1px solid rgb(206, 206, 206);
+    padding-left: 20px;
+}
+
+.button{
+    background-color: #bbd92c;
+    padding: 10px;
+    font-weight: bold;
+}
+
+footer{
+    background-color: #bbd92c;
+    text-align: center;
+    padding: 10px;
+}

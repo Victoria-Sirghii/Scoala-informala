@@ -1,0 +1,104 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+header{
+    background-color: rgb(162, 192, 118);
+    width: 100%;
+    height: 100px;
+
+}
+
+header h2{
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  .mainContent{
+    margin-top: 50px;
+  }
+
+  body{
+    background-color: rgb(228, 228, 228);
+  }
+
+
+  .nav-menu{
+      width: 20%;
+  }
+  .menu{
+    display: flex;
+    flex-direction: column;
+    background-color: #525252;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;  
+    
+  }
+
+  .menu a{
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px 10px 20px;
+      border: 1px solid rgb(114, 114, 114);
+      
+  }
+
+  .menu a:hover{
+      background-color: #2e2e2e;
+      
+  }
+
+.optionClicked{
+    background-color: #2e2e2e;
+  }
+
+.content{
+    width: 80%;
+    margin-left: 20px;
+}
+
+.titleContent{
+    color: grey;
+}
+
+.question{
+    color: rgb(162, 192, 118);
+    background-color:white;
+    padding: 1px 20px;
+    margin: 5px 0;
+    position: relative;
+
+
+}
+
+.question h4{
+    font-size: 16px;
+   
+}
+
+.question p{
+    color: black;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.arrow{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+
+}
+
