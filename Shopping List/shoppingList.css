@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+
+}
+body{
+    background-color: #84090921;
+}
+
+.container{
+    background-image: url(imageedit_1_9787469772.png);
+    background-color: white;
+    border: 1px solid rgb(151, 151, 151);
+    max-width: 70%;
+    margin: auto;
+    border-radius: 0.5em; 
+}
+
+.content{
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.content h2{
+    margin-bottom: 40px;
+}
+
+input{
+    border: 1px solid gray;
+}
+
+input[type="text"]{
+    height: 40px;
+    width: 70%;
+    margin-bottom: 20px;
+    border-radius: 5px; 
+}
+
+.borderActive:focus{
+    border: 2px solid rgb(94, 180, 123);
+    outline: none; 
+}
+
+input[type="submit"]{
+    padding: 10px;
+    width: 28%;
+    height: 40px;
+    background-color: rgb(252, 228, 17);
+    border-radius: 5px;
+}
+
+.sortBtn{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.sortBtn input{
+    background-color:  rgb(252, 228, 17);
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+table{
+    font-size: large;
+}
+
+thead{
+    text-align: left;
+}
+
+.markBtn{
+    padding: 2px 5px;
+    background-color:rgb(255, 169, 169);
+    border-radius: 4px;
+}
+.markedItem{
+    text-decoration: line-through;
+}
