@@ -78,6 +78,10 @@ thead{
     text-align: left;
 }
 
+tr > th{
+    padding-right: 50px;
+}
+
 .markBtn{
     padding: 2px 5px;
     background-color:rgb(255, 169, 169);
