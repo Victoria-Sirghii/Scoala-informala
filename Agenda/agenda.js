@@ -1,29 +1,87 @@
-var agendaList = []
-
+let url = "https://restaurantul-meu-e7357-default-rtdb.europe-west1.firebasedatabase.app/Agenda/"
+var agendaList = {}
 var indexEditare = -1;
+
+async function getLista(){
+    const response = await fetch(url+".json");
+    agendaList = await response.json();
+    if(agendaList===null){
+        agendaList = {};
+        document.querySelector("#tableHead").classList.add(".hidden")
+    }else{
+        showTable()
+    }
+    draw();
+}
 
 function draw(){
     let str = "";
-    let headTable = `<thead>
-                        <tr>
-                            <th>Nume</th>
-                            <th>Telefon</th>
-                        </tr>
-                    </thead>`;
-
-    for(let i = 0; i< agendaList.length; i++){
+    for(let [keyCode, contact] of Object.entries(agendaList)){
         str += `<tbody>
                 <tr>
-                    <td>${agendaList[i].nume}</td>
-                    <td>${agendaList[i].tel}</td>
-                    <td onclick="edit1(${i});"><a href="#">Modifica</a></td>
-                    <td class="link" onclick="del(${i});"><a href="#">Sterge</a></td>
+                    <td>${contact.nume}</td>
+                    <td>${contact.tel}</td>
+                    <td onclick="edit1('${keyCode}')";"><a href="#">Modifica</a></td>
+                    <td class="link" onclick="del('${keyCode}');"><a href="#">Sterge</a></td>
                 </tr>
                 </tbody>`;
     }
-    document.querySelector("table").innerHTML = headTable + str;
+    document.querySelector("table tbody").innerHTML = str;
+
 }
 
+async function addContact(){
+    let nume = document.querySelector("#nameUser").value;
+    let tel = document.querySelector("#telUser").value;
+
+    // validarea finala inainte de a adauga input-ul in tabel
+    for (let i = 0; i < tel.length; i++){
+        if(!(tel[i] >= 0 && tel[i] <= 9 || tel[i] === "+")){
+            document.querySelector("[name='telUser']").classList.add("invalid")
+            document.querySelector("#error").classList.remove("valid")
+            return;
+        }
+    }
+
+    if((nume && tel) === ""){
+        document.querySelector("#error2").classList.remove("hidden")
+        return;
+    }else if(indexEditare === -1){
+        document.querySelector("#error2").classList.add("hidden")
+        const response = await fetch(url+".json",{
+            method: "post",
+            body: JSON.stringify({
+                "nume": nume,
+                "tel": tel
+            }),
+            headers:{
+                'Content-Type': 'application/json'
+            },
+        });
+        await response.json();
+        await getLista()
+    }// adaugarea in caz de editare
+    else{
+        document.querySelector("#error2").classList.add("hidden")
+        let agendaList = {};
+        agendaList.nume = document.querySelector("#nameUser").value;
+        agendaList.tel = document.querySelector("#telUser").value;
+        const response = await fetch(url+indexEditare+".json", {
+            method:"put",
+            body: JSON.stringify(agendaList),
+            headers: {
+              'Content-Type': 'application/json'
+            },
+        });
+        await response.json();
+        await getLista();
+        indexEditare= -1;
+    }
+    
+    document.querySelector("form").reset();
+    showTable();
+}
+ /*functia de adaugare fara baza de date!
 function addContact(){
     let nume = document.querySelector("#nameUser").value;
     let tel = document.querySelector("#telUser").value;
@@ -61,7 +119,7 @@ function addContact(){
     showTable();
 
     document.querySelector("form").reset();
-}
+}*/
 
 function enterKey(event){
     if(event.keyCode === 13){
@@ -102,10 +160,13 @@ function maximLength(elem, event, max){
     }
 }
 
-function del(idx){
+async function del(idx){
     if(confirm(`Esti sigur ca vrei sa stergi acest contact: ${agendaList[idx].nume} cu numarul ${agendaList[idx].tel}?`)){
-        agendaList.splice(idx,1);
-        draw();
+        const response = await fetch(url+idx+".json",{
+            method:"Delete"
+        });
+        await response.json();
+        await getLista();
     }
     //ascund tableBox in cazul in care user-ul sterge toate contactele
     hideTable();
