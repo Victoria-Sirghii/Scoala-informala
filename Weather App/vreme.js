@@ -2,7 +2,7 @@ let city = [];
 
 async function actualWeather(){
     let inputValue = document.querySelector("#inputText").value;
-    let urlWeather = "http://api.openweathermap.org/data/2.5/weather?q="+inputValue+"&appid=21df164d252d4a6fe5b33d7134af1249";
+    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=" + inputValue;
     let response = await fetch(urlWeather);
     city = await response.json()
     drawWeather()
