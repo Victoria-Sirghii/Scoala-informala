@@ -11,7 +11,6 @@ async function actualWeather(){
 
 function drawWeather(){
     let icon = "http://openweathermap.org/img/w/"+city.weather[0]["icon"]+".png";
-    console.log(city.main.temp)
     let str = `
                 <div><img src="${icon}"></span></p>
                 <div>Description: <span>${city.weather[0]['description']}</span></div>
