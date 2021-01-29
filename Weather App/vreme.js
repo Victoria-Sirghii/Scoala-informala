@@ -11,14 +11,15 @@ async function actualWeather(){
 
 function drawWeather(){
     let icon = "http://openweathermap.org/img/w/"+city.weather[0]["icon"]+".png";
+    console.log(city.main.temp)
     let str = `
                 <div><img src="${icon}"></span></p>
                 <div>Description: <span>${city.weather[0]['description']}</span></div>
                 <div>Humidity:  <span>${city.main.humidity}</span></div>
                 <div>Pressure:  <span>${city.main.pressure}</span></div>
-                <div>Current temperature:  <span>${(city.main.temp - 273.15).toString().slice(0,4)+" &#8451;"}</span></div>
-                <div>Minimum of the day:  <span>${(city.main.temp_min - 273.15).toString().slice(0,4)+" &#8451;"}</span></div>
-                <div>Maximum of the day:  <span>${(city.main.temp_max - 273.15).toString().slice(0,4)+" &#8451;"}</span></div>
+                <div>Current temperature:  <span>${city.main.temp +" &#8451;"}</span></div>
+                <div>Minimum of the day:  <span>${city.main.temp_min + " &#8451;"}</span></div>
+                <div>Maximum of the day:  <span>${city.main.temp_max + " &#8451;"}</span></div>
                 `
     document.querySelector(".details .information").innerHTML = str;
     googleMap();
