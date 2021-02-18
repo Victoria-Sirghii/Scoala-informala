@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+header{
+    margin-bottom: 20px;
+}
+.teaList {
+    margin: 20px;
+}
+
+/* products table */
+.productsTable{
+    width: 75%;
+}
+.productheader{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 100%;
+}
+.productheader button{
+    padding: 10px 20px;
+    font-size: 14px;
+    outline: none;
+    background-color: #4c787b;
+    border: 1px solid #4c787b;
+    color: white;
+    cursor: pointer;
+}
+.productheader h1, .addBox h2{
+    font-weight: 500;
+}
+.productImg{
+    width: 55px;
+    height: 50px;
+    margin: 5px 2px;
+}
+#allProducts{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#allProducts th, #allProducts td{
+    border-bottom: 1px solid rgb(150, 150, 150);
+    text-align: left;
+}
+#allProducts th{
+    border-bottom: 1.5px solid rgb(0, 0, 0);
+    padding-bottom: 10px;
+}
+#allProducts tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#allProducts tr:hover {
+    background-color: #ddd;
+}
+
+.removebtn{
+    text-decoration: none;
+    color: #4c787b;
+    font-weight: bold;
+}
+
+.nameLink{
+    text-decoration: none;
+    color: #365153;
+    font-weight: bold;
+}
+.nameLink:hover{
+    color:  #4a6c6e
+}
+/* add product Box */
+.addBox{
+    width: 48%;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.addBox input{
+    width: 384px;
+    height: 30px;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+.addBox input:focus{
+    border: 2px solid #4c7b6b;
+    border-radius: 2px;
+}
+.addBox textarea{
+    outline: none;
+}
+.addBox textarea:focus{
+    border: 2px solid #4c7b6b;
+    border-radius: 2px;
+}
+
+.addBox .option{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.addBox .buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons .saveBtn{
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-size: 14px;
+    outline: none;
+    background-color: #4c787b;
+    border: 1px solid #4c787b;
+    color: white;
+    margin-right: 10px;
+}
+.buttons .saveBtn:hover, .buttons .cancelBtn:hover, .productheader button:hover {
+    background-color: #4a6c6e;
+    border: 1px solid #365153;
+    color: white;    
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.buttons .cancelBtn{
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+    border: 1px solid  #4c787b;;
+    color:  #4c787b;
+}
+
+.plusIcon{
+    margin-right: 5px;
+}

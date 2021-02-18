@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Serif', serif;
+}
+
+header{
+    background-color: #349c79;
+    padding: 16px;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+}
+.img-Logo{
+    width: 67px;
+    height: 32px;
+}
+.logo, .menu{
+    display: flex;
+    align-items: center;
+}
+.text-Logo{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.rigth-side, .mobile-ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+.rigth-side a, .mobile-menu a{
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+.rigth-side a i, .mobile-menu a i{
+    margin: 3px;
+}
+.burger-menu{
+    color: white;
+    display: none;
+}
+.remove{
+    display: none;
+}
+
+.mobile-menu{
+    z-index: 1;
+    display: none;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    margin: 30px 15px 0px 15px;
+    border-bottom: 1px solid #4c7b6b;
+    border-top: 1px solid #4c7b6b;
+    padding: 7px 0;
+    font-size: 11px
+}
+.nav-bar a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: black;
+
+}
+
+/* aside with tea list */
+/* checkbox style
+https://stackoverflow.com/questions/34388696/how-to-change-the-background-color-on-a-input-checkbox-with-css
+*/
+.teaList ul{
+    list-style-type: none;
+}
+.teaList ul li{
+    padding: 8px 0;
+} 
+
+ul li input{
+    margin-right: 10px;
+}
+.title{
+    margin-bottom: 15px;
+}
+.teaList section p{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+input[type="checkbox"] {
+   display: none;
+}
+label {
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label:before {
+    border: 1px solid #333;
+    content: "\00a0";
+    display: inline-block;
+    font-size: 0px;
+    height: 13px;
+    vertical-align: top;
+    width: 13px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+input[type="checkbox"]:checked + label:before {
+    background: #4c7b6b;
+    color: #4c7b6b;
+    content: "\2713";
+    text-align: center;
+}
+
+/* main with list and products */
+.products{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.productsImg{
+    max-width: 100%;
+    max-height: 100%;
+}
+.teaList{
+    margin: 30px 15px;
+    width: 25%;
+}
+
+.allProducts{
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 75%;
+}
+.allProducts p{
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+.price p{
+    font-size: 12px;
+}
+
+/* products box */
+.productsBox{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+}
+.teaBox{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.teaImg{
+    max-width: 239px;
+}
+.teaName{
+    margin: 6px;
+}
+.productCart{
+    max-width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.buttonsCart{
+    display: flex;
+    justify-content: space-around;
+}
+.buttonsCart a{
+    text-decoration: none;
+}
+
+.details{
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    outline: none;
+    background-color: #4c787b;
+    border: 1px solid #4c787b;
+    color: white;
+
+}
+.addCart{
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+    border: 1px solid  #4c787b;;
+    color:  #4c787b;
+    /* visibility: hidden; */
+}
+.details:hover{
+    background-color: white;
+    border: 1px solid  #4c787b;;
+    color:  #4c787b;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.addCart:hover{
+    background-color: #4c787b;
+    border: 1px solid #4c787b;
+    color: white;    
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+/* footer */
+footer{
+    height: 170px;
+    background-color: #223031;
+}
+
+footer ul{
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerList li{
+    margin: 20px;
+}
+.footerList li a{
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    padding: 10px;
+    font-size: 14px;
+}
+.footerIcons{
+    margin-top: 15px;
+    color: white;
+}
+
+footer section{
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+footer section i{
+    margin: 0 5px;
+    font-size: 28px;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (max-width: 1100px) {
+    .productsBox{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: inherit;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .link{
+        display: none;
+    }
+    /* aside Box */
+    .products{
+        display: inline;
+    }
+    .allProducts{
+        margin: 15px;
+        width: 94%;
+    }
+    .nav-bar .container{
+        margin-left: initial;
+    }
+    .teaList{
+        border-bottom: 1px solid #4c7b6b;
+        margin: 15px 0;
+        width: 100%;
+        padding-left: 15px;
+    }
+    .productsImg{
+        display: none;
+    }
+    /* foooter */
+    .footerList li a{
+        font-size: 12px;
+    }
+    .footerList .contactUs{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger-menu{
+        display: block;
+        font-size: 25px;
+    }
+    .hidden{
+        display: block;
+        margin: 10px;
+    }
+    .productsBox{
+        grid-template-columns: 1fr 1fr;
+        column-gap: inherit;
+    }
+    .teaImg{
+        width: 100%;
+    }
+    .buttonsCart{
+        flex-direction: column;
+        width: 94px;
+        margin: 0 auto;
+     }
+    .addCart{
+        padding: 5px;
+    }
+    .details{
+        display: none;
+    }
+    .teaBox{
+        max-width: 70%;
+    }
+    footer ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerList li{
+        margin: 5px;
+    }
+    footer section{
+        margin: 10px;
+        font-size: 12px;
+    }
+    footer section i{
+        font-size: 18px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .rigth-side{
+        display: none;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    .remove{
+        display: block;
+    }
+    .mobile-menu{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        overflow: hidden;
+        background-color: #eefbf2;
+        width: 0%;
+        transition: .2s;
+    }
+    .mobile-ul{
+        font-size: 20px;
+        width: 50%;
+        margin: 0 auto;
+        top: 10%;
+        position: relative;
+        display: block;
+    }
+    .mobile-ul li{
+        text-align: center;
+        margin: 15px 0;
+        color: #349c79;
+    }
+    .mobile-ul li a{
+        color: #349c79;
+    }
+    .remove{
+        position: absolute;
+        top: 21px;
+        right: 33px;
+        font-size: 25px;
+        color: #349c79;
+    }
+    .width{
+        width: 100%;
+    }
+}
+
+  @media (min-width: 992px) {
+    .container {
+      width: 98%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      width: 90%;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .container {
+      width: 70%;
+    }
+  }
+
+
+
+  

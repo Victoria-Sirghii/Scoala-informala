@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9999a0ad8c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="comun.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <title>Tea shop</title>
+</head>
+<body onload="getProducts(); getCartList()">
+    <header>
+        <div class="nav-menu container">
+            <div class="left-side">
+                <div class="logo">
+                    <a href="index.html"><img class="img-Logo" src="tea logo2.png"></a>
+                    <a href="index.html" class="text-Logo"><p>TEA SHOP</p></a>
+                </div>
+            </div>
+            <div class="menu">
+                <i class="fas fa-bars burger-menu" onclick="openNavMenu()"></i>
+                <ul class="rigth-side">
+                    <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
+                    <li><a href="admin.html"><button class="adminBtn"><i class="fas fa-lock"></i>ADMIN</button></a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <ul class="mobile-ul">
+                        <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
+                        <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#" class="contactUs">Contact us</a></li>
+                    </ul>
+                    <i class="fas fa-times remove" onclick="removeNavMenu()"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html">HOME <span>/</span></a>
+            <a href="#">PRODUCTS<span></span></a>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="products">
+            <aside class="teaList">
+                <section>
+                    <h2 class="title">Specialty Tea</h2>
+                    <ul class="typeList">
+                        <li><input type="checkbox" id="greenTea" onclick="showProducs(this);"><label for="greenTea">Green Tea</label></li>
+                        <li><input type="checkbox" id="blackTea" onclick="showProducs(this);"><label for="blackTea">Black Tea</label></li>
+                        <li><input type="checkbox" id="matcha" onclick="showProducs(this);"><label for="matcha">Matcha</label></li>
+                        <li><input type="checkbox" id="oolongTea" onclick="showProducs(this);"><label for="oolongTea">Oolong Tea</label></li>
+                        <li><input type="checkbox" id="herbalTea" onclick="showProducs(this);"><label for="herbalTea">Herbal Teas & Wellness Teas</label></li>
+                        <li><input type="checkbox" id="whiteTea" onclick="showProducs(this);"><label for="whiteTea">White Tea</label></li>
+                    </ul>
+                </section>
+            </aside>
+            <section class="allProducts">
+                <h2 class="title">Products</h2>
+                <div class="productsBox"></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <ul class="footerList">
+            <li><a href="#">SHIPPING & RETURNS</a></li>
+            <li><a href="#">TERMS & CONDITIONS </a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#" class="contactUs">CONTACT US</a></li>
+        </ul>
+        <section>
+            <p>FOLLOW US</p>
+            <div class="footerIcons">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
