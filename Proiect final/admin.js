@@ -1,8 +1,9 @@
-let urlProductsList = "https://e-shop-e08d6-default-rtdb.europe-west1firebasedatabase.app/produse/";
+let urlProductsList = "https://e-shop-e08d6-default-rtdb.europe-west1.firebasedatabase.app/produse/";
 let productsList = {};
 
 async function getProducts(){
     productsList =  await ajax(urlProductsList);
+    
     drawTable();
 }
 
@@ -17,7 +18,7 @@ async function ajax(url, method, body){
     return await response.json();
 }
 
-function drawProducts(){
+function drawTable(){
     let html = "";
 
     if(checked.length === 0){
@@ -127,7 +128,7 @@ function showProducs(elem){
             }
         }
     }
-    await getProducts()
+    getProducts()
 }
 function showAddBox(){
     document.querySelector(".addBox").classList.remove("hidden")

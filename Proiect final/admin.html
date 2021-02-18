@@ -62,7 +62,7 @@
             </table>
         </section>
     </div>
-    <form onsubmit="addProduct(event);" class="addBox hidden">
+    <form class="addBox hidden">
         <h2>Add product</h2>
         <div class="option">
             <label for="typeOfTea">Type of tea*</label>
@@ -89,7 +89,7 @@
             <input type="text" id="productStock">
         </div>
         <div class="buttons">
-            <button class="saveBtn"><i class="fas fa-plus plusIcon"></i>SAVE</button>
+            <button onclick="addProduct(event);"class="saveBtn"><i class="fas fa-plus plusIcon"></i>SAVE</button>
             <button onclick="hideAddBox();" class="cancelBtn">CANCEL</button>
         </div>
     </form>
