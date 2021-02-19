@@ -12,88 +12,90 @@
     <title>Tea Cart</title>
 </head>
 <body onload="getProductsCart();">
-    <header>
-        <div class="nav-menu container">
-            <div class="left-side">
-                <div class="logo">
-                    <a href="index.html"><img class="img-Logo" src="tea logo2.png"></a>
-                    <a href="index.html" class="text-Logo"><p>TEA SHOP</p></a>
+    <div class="opacity">
+        <header>
+            <div class="nav-menu container">
+                <div class="left-side">
+                    <div class="logo">
+                        <a href="index.html"><img class="img-Logo" src="tea logo2.png"></a>
+                        <a href="index.html" class="text-Logo"><p>TEA SHOP</p></a>
+                    </div>
                 </div>
-            </div>
-            <div class="menu">
-                <i class="fas fa-bars burger-menu" onclick="openNavMenu()"></i>
-                <ul class="rigth-side">
-                    <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
-                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
-                    <li><a href="admin.html"><button class="adminBtn"><i class="fas fa-lock"></i>ADMIN</button></a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <ul class="mobile-ul">
+                <div class="menu">
+                    <i class="fas fa-bars burger-menu" onclick="openNavMenu()"></i>
+                    <ul class="rigth-side">
                         <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
                         <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
                         <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#" class="contactUs">Contact us</a></li>
+                        <li><a href="admin.html"><button class="adminBtn"><i class="fas fa-lock"></i>ADMIN</button></a></li>
                     </ul>
-                    <i class="fas fa-times remove" onclick="removeNavMenu()"></i>
                 </div>
             </div>
-        </div>
-    </header>
-    <nav class="nav-bar">
-        <div class="container">
-            <a href="index.html">HOME <span>/</span></a>
-            <a href="#">CART<span></span></a>
-        </div>
-    </nav>
-    <h1 class="cartText">Cart</h1>
-    <section class="noProducts">You don't have any items in your cart yet. Continue shopping.</section>
-    <main>
-        <table class="productsCart">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th></th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-   </table>
-        <section class="subtotal">
-            <p>SUBTOTAL</p>
-            <p>$ <span class="total"></span></p>
-        </section>
-        <section class="checkout">
-            <button class="checkoutBtn">CHECKOUT</button>
-        </section>
-    </main>
-    <section class="aboutUs">
-        <p>TEA SHOP</p>
-        <p>TEA SHOP has been supplying its speciality teas in Europe 5 years. Operating from its warehouses in the Switzerland, TEA SHOP is a family owned business with community ties in the Southern Asia Area.</p>
-        <p>TEA SHOP sources its speciality teas from farms all over the world (see tea origins).
-            The assortments are freshly packed in special bags, with a triple layer of protection, which maintain the quality of the plants and the special scents.</p>
-        <p>We welcome you to explore our specialty tea range.</p>
-    </section>
-    <footer>
-        <ul class="footerList">
-            <li><a href="#">SHIPPING & RETURNS</a></li>
-            <li><a href="#">TERMS & CONDITIONS </a></li>
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="#" class="contactUs">CONTACT US</a></li>
-        </ul>
-        <section>
-            <p>FOLLOW US</p>
-            <div class="footerIcons">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-instagram"></i>
+        </header>
+        <nav class="nav-bar">
+            <div class="container">
+                <a href="index.html">HOME <span>/</span></a>
+                <a href="#">CART<span></span></a>
             </div>
+        </nav>
+        <h1 class="cartText">Cart</h1>
+        <section class="noProducts">You don't have any items in your cart yet. Continue shopping.</section>
+        <main>
+            <table class="productsCart">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th></th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+    </table>
+            <section class="subtotal">
+                <p>SUBTOTAL</p>
+                <p>$ <span class="total"></span></p>
+            </section>
+            <section class="checkout">
+                <button class="checkoutBtn">CHECKOUT</button>
+            </section>
+        </main>
+        <section class="aboutUs">
+            <p>TEA SHOP</p>
+            <p>TEA SHOP has been supplying its speciality teas in Europe 5 years. Operating from its warehouses in the Switzerland, TEA SHOP is a family owned business with community ties in the Southern Asia Area.</p>
+            <p>TEA SHOP sources its speciality teas from farms all over the world (see tea origins).
+                The assortments are freshly packed in special bags, with a triple layer of protection, which maintain the quality of the plants and the special scents.</p>
+            <p>We welcome you to explore our specialty tea range.</p>
         </section>
-    </footer>
+        <footer>
+            <ul class="footerList">
+                <li><a href="#">SHIPPING & RETURNS</a></li>
+                <li><a href="#">TERMS & CONDITIONS </a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#" class="contactUs">CONTACT US</a></li>
+            </ul>
+            <section>
+                <p>FOLLOW US</p>
+                <div class="footerIcons">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </section>
+        </footer>
+    </div>
+    <div class="mobile-menu">
+        <ul class="mobile-ul">
+            <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#" class="contactUs">Contact us</a></li>
+        </ul>
+        <i class="fas fa-times remove" onclick="removeNavMenu()"></i>
+    </div>
 
 </body>
 </html>

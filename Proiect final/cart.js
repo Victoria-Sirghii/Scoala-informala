@@ -4,8 +4,7 @@ let productsCart = {};
 let productsList = {};
 
 async function getProductsCart(){
-    let response = await fetch(urlProductsCart + ".json");
-    productsCart = await response.json();
+    productsCart = await ajax(urlProductsCart);
     await productList();
 
     if(productsCart === null){
@@ -13,15 +12,24 @@ async function getProductsCart(){
         return;
     }else{
         drawCart();
-        objectLenght();
+        getCartLenght();
         hideTable();
     }
-    
 }
 
 async function productList(){
-    let response = await fetch(urlProductList + ".json");
-    productsList = await response.json();
+    productsList= await ajax(urlProductList);
+}
+
+async function ajax(url, method, body){
+    let response = await fetch(url+".json",{
+        method: method, 
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+            }
+    });
+    return await response.json();
 }
 
 function drawCart(){
@@ -39,18 +47,18 @@ function drawCart(){
                     <td>$ <span class="price">${product.productPrice}</span></td>
                     <td>
                         <div class="quantity">
-                            <button class="decrement stock" onclick="decrement('${productkey}', '${productCart.id}');">-</button>
+                            <button class="decrement stock" onclick="decrement('${productkey}', '${productCart.id}'); event.preventDefault()">-</button>
                             <p class="stock"><span class="grams">${productCart.quantity}</span> g</p>
-                            <button class="increment stock" onclick="increment('${productkey}' , '${productCart.id}');">+</button>
+                            <button class="increment stock" onclick="increment('${productkey}' , '${productCart.id}'); event.preventDefault()">+</button>
                         </div>
                         <p class="warningText">More quantity is not in stock</p>
                     </td>
-                    <td>$ <span class="total">${(parseInt(productCart.quantity) * parseInt(product.productPrice))/parseInt("100")+ ".00"}</span></td>
+                    <td>$ <span class="total">${((parseInt(productCart.quantity) * parseInt(product.productPrice))/parseInt("100")).toFixed(2)}</span></td>
                     <td><a href="#" class="removeBtn" onclick="removeItem('${productkey}', '${product.productName}')">Remove</a></td>
                 </tr>
                 `
+            }
         }
-    }
    }
    document.querySelector(".productsCart tbody").innerHTML = html;
    document.querySelector(".subtotal .total").innerText = subtotal.toFixed(2);
@@ -58,19 +66,12 @@ function drawCart(){
 
 async function removeItem(idx, name){
     if(confirm(`Are you sure you want to remove ${name}?`)){
-        let response = await fetch(urlProductsCart + idx + ".json",{
-            method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json'
-                }
-        })
-        productsCart = await response.json();
+        productsCart = await ajax(urlProductsCart + idx, "DELETE")
     }
     await getProductsCart()
 }
 
 function hideTable(){
-    // let objectLenght = Object.keys(productsCart).length; 
     if(productsCart === null){
         document.querySelector(".noProducts").style.display = "block";
         document.querySelector("main").style.display = "none";
@@ -82,7 +83,6 @@ function hideTable(){
 }
 
 async function decrement(idx, id){
-    //
     let grams = ""
     for(let [key, item] of Object.entries(productsCart)){
         if(item.id === id){
@@ -93,17 +93,11 @@ async function decrement(idx, id){
     if(grams === 100){
         return
     }else{
-        let response = await fetch(urlProductsCart + idx + ".json",{
-            method: "PUT",
-            body: JSON.stringify({
+        productsCart = await ajax(urlProductsCart + idx, "PUT", 
+            {
                 "id": id,
                 "quantity": parseInt(grams) - 100
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-                }
-        })
-        productsCart = await response.json();
+            })
         await getProductsCart()
     }
 }
@@ -124,22 +118,16 @@ async function increment(idx, id){
         document.querySelector(".warningText").style.display = "block";
         return
     }else{
-        let response = await fetch(urlProductsCart + idx + ".json",{
-            method: "PUT",
-            body: JSON.stringify({
-                "id": id,
-                "quantity": parseInt(grams) + 100
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-                }
-            })
-        productsCart = await response.json();
-        await getProductsCart()
+        productsCart = await ajax(urlProductsCart + idx, "PUT", 
+        {
+            "id": id,
+            "quantity": parseInt(grams) + 100
+        })
+        await getProductsCart();
     }
 }
 
-function objectLenght(){
+function getCartLenght(){
     let objectLenght = Object.keys(productsCart).length; 
     document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
 }

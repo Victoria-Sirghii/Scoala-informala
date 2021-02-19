@@ -6,7 +6,16 @@
     box-sizing: border-box;
     font-family: 'PT Serif', serif;
 }
-
+.mobile{
+    background: gray;
+    opacity: 0.7;
+    overflow: hidden;
+    margin: 0; 
+    height: 100%; 
+}
+.imgOpacity{
+    opacity: 0.2;
+}
 header{
     background-color: #349c79;
     padding: 16px;
@@ -50,6 +59,9 @@ header{
 }
 
 .mobile-menu{
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
     z-index: 1;
     display: none;
 }
@@ -158,7 +170,8 @@ input[type="checkbox"]:checked + label:before {
     margin-bottom: 30px;
 }
 .teaImg{
-    max-width: 239px;
+    max-width: 100%;
+    height: auto;
 }
 .teaName{
     margin: 6px;
@@ -267,7 +280,6 @@ footer section i{
 @media (max-width: 1100px) {
     .productsBox{
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: inherit;
     }
 }
 
@@ -282,7 +294,7 @@ footer section i{
     }
     .allProducts{
         margin: 15px;
-        width: 94%;
+        width: 96%;
     }
     .nav-bar .container{
         margin-left: initial;
@@ -316,10 +328,6 @@ footer section i{
     }
     .productsBox{
         grid-template-columns: 1fr 1fr;
-        column-gap: inherit;
-    }
-    .teaImg{
-        width: 100%;
     }
     .buttonsCart{
         flex-direction: column;

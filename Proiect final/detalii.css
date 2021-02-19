@@ -12,7 +12,7 @@
     margin: 0 auto;
 }
 
-.image{
+.teaImg{
     max-width: 45%;
     margin: 30px;
 }
@@ -100,7 +100,8 @@ footer{
   height: 100%;
 }
 
-.swiper-slide {
+.swiper-slide { 
+  max-width: 100%;
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -120,7 +121,13 @@ footer{
   align-items: center;
 }
 
-
+.carouselImg{
+    max-width: 75%;
+    height: auto;
+}
+.teaBox{
+    max-width: 90%;
+}
 
 @media (max-width: 992px) {
     .quantityCart{
@@ -136,7 +143,6 @@ footer{
 
 }
 
-
 @media (max-width: 768px) {
     .productBox{
         display: flex;
@@ -144,9 +150,11 @@ footer{
         align-content: center;
         text-align: center;
     }
-    .image{
-        max-width: 100%;
-        margin: 20px;
+    .teaImg{
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 27px;
     }
     .productInfo{
         width: 100%;

@@ -16,127 +16,127 @@
     
 </head>
 <body onload="getProduct(); getCartList();" >
-    <header>
-        <div class="nav-menu container">
-            <div class="left-side">
-                <div class="logo">
-                    <a href="index.html"><img class="img-Logo" src="tea logo2.png"></a>
-                    <a href="index.html" class="text-Logo"><p>TEA SHOP</p></a>
+    <div class="opacity">
+        <header>
+            <div class="nav-menu container">
+                <div class="left-side">
+                    <div class="logo">
+                        <a href="index.html"><img class="img-Logo" src="tea logo2.png"></a>
+                        <a href="index.html" class="text-Logo"><p>TEA SHOP</p></a>
+                    </div>
                 </div>
-            </div>
-            <div class="menu">
-                <i class="fas fa-bars burger-menu" onclick="openNavMenu()"></i>
-                <ul class="rigth-side">
-                    <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
-                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
-                    <li><a href="admin.html"><button class="adminBtn"><i class="fas fa-lock"></i>ADMIN</button></a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <ul class="mobile-ul">
+                <div class="menu">
+                    <i class="fas fa-bars burger-menu" onclick="openNavMenu()"></i>
+                    <ul class="rigth-side">
                         <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
                         <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
                         <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#" class="contactUs">Contact us</a></li>
+                        <li><a href="admin.html"><button class="adminBtn"><i class="fas fa-lock"></i>ADMIN</button></a></li>
                     </ul>
-                    <i class="fas fa-times remove" onclick="removeNavMenu()"></i>
                 </div>
             </div>
-        </div>
-    </header>
-    <nav class="nav-bar">
-        <div class="container">
-            <a href="index.html">HOME <span>/</span></a>
-            <a href="#"><span class="typeOf"></span><span></span></a>
-            <a href="#"><span class="teaName"></span></a>
-        </div>
-    </nav>
-    <main class="container">
-        <div class="productBox">
-            <img class="image" src=""/>
-            <div class="productInfo">
-                <h2></h2>
-                <section class="description"></section>
-                <section class="quantityCart">
-                    <div class="quantity">
-                        <button class="decrement stock" onclick="decrement();">-</button>
-                        <p class="stock"><span class="grams">100</span> g</p>
-                        <button class="increment stock" onclick="increment();">+</button>
+        </header>
+        <nav class="nav-bar">
+            <div class="container">
+                <a href="index.html">HOME <span>/</span></a>
+                <a href="#"><span class="typeOf"></span><span></span></a>
+                <a href="#"><span class="teaName"></span></a>
+            </div>
+        </nav>
+        <main class="container">
+            <div class="productBox">
+                <img class="teaImg" src=""/>
+                <div class="productInfo">
+                    <h2></h2>
+                    <section class="description"></section>
+                    <section class="quantityCart">
+                        <div class="quantity">
+                            <button class="decrement stock" onclick="decrement();">-</button>
+                            <p class="stock"><span class="grams">100</span> g</p>
+                            <button class="increment stock" onclick="increment();">+</button>
+                        </div>
+                        <div>
+                            <button class="addToCart" onclick="addToCart(event);">ADD TO CART - $<span class="price"></span></button>
+                        </div>
+                    </section>
+                    <p class="warning">More quantity is not in stock</p>
+                    <p class="warning2">Verify your cart please, we have just <span class="stockAvailable"></span> g in stock</p>
+                    <div class="addToWish">
+                        <i class="far fa-heart"></i>
+                        <span>Add to wishlist</span>
                     </div>
-                    <div>
-                        <button class="addToCart" onclick="addItemToCart(event);">ADD TO CART - $<span class="price"></span></button>
-                    </div>
-                </section>
-                <p class="warning">More quantity is not in stock</p>
-                <p class="warning2">Verify your cart please, we have just <span class="stockAvailable"></span> g in stock</p>
-                <div class="addToWish">
-                    <i class="far fa-heart"></i>
-                    <span>Add to wishlist</span>
                 </div>
             </div>
-        </div>
-        <div class="carousel">
-            <!--https://github.com/nolimits4web/Swiper/blob/master/demos/210-infinite-loop-with-slides-per-group.html-->
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-                <div class="swiper-slide item"></div>
-              </div>
-              <!-- Add Pagination -->
-              <div class="swiper-pagination"></div>
-              <!-- Add Arrows -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-          
-            <!-- Swiper JS -->
-            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-          
-            <!-- Initialize Swiper -->
-            <script src="detalii.js" type="text/javascript"></script>
-            <script>
-              var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                slidesPerGroup: 3,
-                loop: true,
-                loopFillGroupWithBlank: true,
-                pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-                },
-                navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-                },
-              });
-            </script>
-            </div>
-    </main>
-    <footer>
-        <ul class="footerList">
-            <li><a href="#">SHIPPING & RETURNS</a></li>
-            <li><a href="#">TERMS & CONDITIONS </a></li>
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="#" class="contactUs">CONTACT US</a></li>
+            <div class="carousel">
+                <!--https://github.com/nolimits4web/Swiper/blob/master/demos/210-infinite-loop-with-slides-per-group.html-->
+                <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                    <div class="swiper-slide item"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                </div>
+            
+                <!-- Swiper JS -->
+                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            
+                <!-- Initialize Swiper -->
+                <script src="detalii.js" type="text/javascript"></script>
+                <script>
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    slidesPerGroup: 3,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    },
+                    navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    },
+                });
+                </script>
+                </div>
+        </main>
+        <footer>
+            <ul class="footerList">
+                <li><a href="#">SHIPPING & RETURNS</a></li>
+                <li><a href="#">TERMS & CONDITIONS </a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#" class="contactUs">CONTACT US</a></li>
+            </ul>
+            <section>
+                <p>FOLLOW US</p>
+                <div class="footerIcons">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </section>
+        </footer>
+    </div>
+    <div class="mobile-menu">
+        <ul class="mobile-ul">
+            <li><a href="#"><i class="fas fa-search"></i>Search</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Login</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart <span class="cartLenght"></span></a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#" class="contactUs">Contact us</a></li>
         </ul>
-        <section>
-            <p>FOLLOW US</p>
-            <div class="footerIcons">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-        </section>
-    </footer>
-    
-    
+        <i class="fas fa-times remove" onclick="removeNavMenu()"></i>
+    </div>
 </body>
 </html>

@@ -1,11 +1,20 @@
-
 let urlProductsList = "https://e-shop-e08d6-default-rtdb.europe-west1.firebasedatabase.app/produse/";
 let productsList = {};
 
 async function getProducts(){
-    let response = await fetch(urlProductsList + ".json");
-    productsList = await response.json();
+    productsList = await ajax(urlProductsList);
     drawProducts();
+}
+
+async function ajax(url, method, body){
+    let response = await fetch(url+".json",{
+        method: method, 
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+            }
+    });
+    return await response.json();
 }
 
 function drawProducts(){
@@ -23,7 +32,7 @@ function drawProducts(){
                     </div>
                     <div class="buttonsCart">
                         <a href="detalii.html?id=${id}"><button class="details">Details</button></a>
-                        <a href="#" onclick="addItem('${id}');"><button class="addCart">Add to cart</button></a>
+                        <a href="#" onclick="addToCart('${id}'); event.preventDefault();"><button class="addCart">Add to cart</button></a>
                     </div>
                 </div>
             `
@@ -44,7 +53,7 @@ function drawProducts(){
                         </div>
                         <div class="buttonsCart">
                             <a href="detalii.html?id=${id}"><button class="details">Details</button></a>
-                            <a href="#" onclick="addItem('${id}'); event.preventDefault();"><button class="addCart">Add to cart</button></a>
+                            <a href="#" onclick="addToCart('${id}'); event.preventDefault();"><button class="addCart">Add to cart</button></a>
                         </div>
                     </div>
                 `
@@ -76,45 +85,37 @@ let urlCart = "https://e-shop-e08d6-default-rtdb.europe-west1.firebasedatabase.a
 let productsCart = {};
 
 async function getCartList(){
-    let response = await fetch(urlCart + ".json");
-    productsCart = await response.json();
-    objectLenght();
+    productsCart = await ajax(urlCart);
+    getCartLenght();
 }
 
-function objectLenght(){
-    let objectLenght = Object.keys(productsCart).length; 
-    document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
-}
-
-async function addItem(id){
+async function addToCart(id){
     let findProduct = false;
-    let keyIndex = "";
-    let oldQuantity = "";
 
+    //verific daca produsul a fost adaugat deja in cos
     if(productsCart !== null){
-        for(let [key, item] of Object.entries(productsCart)){
-            if(id === item.id){
-                keyIndex = key;
+        for(let item in productsCart){
+            if(id === productsCart[item].id){
                 findProduct = true;
-                oldQuantity = item.quantity;
             }
     }}
 
     if(findProduct === false){
-        let response = await fetch(urlCart + ".json", {
-            method: "POST",
-            body: JSON.stringify({
+        productsCart =  await ajax(urlCart, "POST", 
+            {
                 "id": id,
                 "quantity": 100,
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-                }
-        });
-        productsCart =  await response.json();
+            })
         await getCartList()
-        objectLenght();
+        getCartLenght();
     }else{
-        alert("The product is in the cart, please check it!");
+        alert("This product has already been added. Check your cart.");
     }
+}
+
+function getCartLenght(){
+    if(productsCart !== null){
+        let objectLenght = Object.keys(productsCart).length;
+        document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
+    } 
 }
