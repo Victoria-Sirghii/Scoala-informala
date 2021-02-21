@@ -1,4 +1,4 @@
-let url = "https://restaurantul-meu-e7357-default-rtdb.europe-west1.firebasedatabase.app/Agenda/"
+let url = "https://agenda-94fca-default-rtdb.europe-west1.firebasedatabase.app/Agenda/"
 var agendaList = {}
 var indexEditare = -1;
 
