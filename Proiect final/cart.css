@@ -93,6 +93,9 @@ main{
     color: rgb(212, 35, 35);
     display: none;
 }
+.loading{
+    display: none;
+}
 
 @media (max-width: 1200px) {
     .productsCart{

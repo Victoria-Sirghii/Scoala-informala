@@ -5,10 +5,14 @@ var id = window.location.search.substr(4);
 
 
 async function getProduct(){
+    document.querySelector(".loading").style.display = "block";
     product = await ajax(urlProductsList + id);
     await getProductsList()
     drawProduct();
     getCartLenght();
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".quantityCart, .addToWish").style.display = "flex";
+
 }
 
 async function getProductsList(){
@@ -167,7 +171,7 @@ async function addToCart2(id){
         productsCart =  await ajax(urlCart, "POST", 
             {
                 "id": id,
-                "quantity": 100,
+                "quantity": "100",
             })
         await getCartList()
         getCartLenght();

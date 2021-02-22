@@ -2,9 +2,11 @@ let urlProductsList = "https://e-shop-e08d6-default-rtdb.europe-west1.firebaseda
 let productsList = {};
 
 async function getProducts(){
+    document.querySelector(".loading").style.display = "block"
     productsList =  await ajax(urlProductsList);
     
     drawTable();
+    document.querySelector(".loading").style.display = "none"
 }
 
 async function ajax(url, method, body){

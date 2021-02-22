@@ -137,3 +137,6 @@ header{
 .plusIcon{
     margin-right: 5px;
 }
+.loading{
+    position: relative;
+}

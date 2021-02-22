@@ -65,10 +65,12 @@ function drawCart(){
 }
 
 async function removeItem(idx, name){
+    document.querySelector(".loading").style.display = "block";
     if(confirm(`Are you sure you want to remove ${name}?`)){
         productsCart = await ajax(urlProductsCart + idx, "DELETE")
     }
-    await getProductsCart()
+    await getProductsCart();
+    document.querySelector(".loading").style.display = "none";
 }
 
 function hideTable(){
