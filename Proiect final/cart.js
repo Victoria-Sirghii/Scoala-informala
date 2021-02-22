@@ -92,8 +92,8 @@ async function decrement(idx, id){
         }
     }
 
-    if(grams === 100){
-        return
+    if(parseInt(grams) === 100){
+        return;
     }else{
         productsCart = await ajax(urlProductsCart + idx, "PUT", 
             {

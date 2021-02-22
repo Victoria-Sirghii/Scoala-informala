@@ -12,7 +12,7 @@ async function getProduct(){
     getCartLenght();
     document.querySelector(".loading").style.display = "none";
     document.querySelector(".quantityCart, .addToWish").style.display = "flex";
-
+    document.querySelector(".addToWish").style.display = "flex";
 }
 
 async function getProductsList(){
