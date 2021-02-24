@@ -132,4 +132,5 @@ async function increment(idx, id){
 function getCartLenght(){
     let objectLenght = Object.keys(productsCart).length; 
     document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
+    document.querySelector(".cartLenght2").innerText = "(" + objectLenght +  ")";
 }

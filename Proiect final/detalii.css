@@ -136,9 +136,6 @@ footer{
 }
 
 @media (max-width: 992px) {
-    .quantityCart{
-        display: inline;
-    }
     main{
         width: 100%;
         margin: 0 auto;
@@ -168,14 +165,7 @@ footer{
     .productInfo .description {
         margin: 20px 20px;
     }
-    .quantityCart{
-        display: flex;
-        justify-content: space-between;
-    }
-    .quantity{
-        justify-content: center;
-    }
-    .nav-bar{
+    .quantity, .nav-bar, .addToWish{
         justify-content: center;
     }
     .nav-bar div{
@@ -186,7 +176,7 @@ footer{
         margin: 0;
     }
     .teaBox, .price{
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 @media (max-width: 1200px) {

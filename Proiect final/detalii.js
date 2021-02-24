@@ -11,7 +11,7 @@ async function getProduct(){
     drawProduct();
     getCartLenght();
     document.querySelector(".loading").style.display = "none";
-    document.querySelector(".quantityCart, .addToWish").style.display = "flex";
+    document.querySelector(".quantityCart").style.display = "flex";
     document.querySelector(".addToWish").style.display = "flex";
 }
 
@@ -184,5 +184,6 @@ function getCartLenght(){
     if(productsCart !== null){
         let objectLenght = Object.keys(productsCart).length;
         document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
+        document.querySelector(".cartLenght2").innerText = "(" + objectLenght +  ")";
     } 
 }

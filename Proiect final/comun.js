@@ -1,9 +1,16 @@
 function openNavMenu(){
-    document.querySelector(".mobile-menu").style.width = "80%";
-    document.querySelector(".opacity-mobile").classList.add("mobile")
-}
-function removeNavMenu(){
-    document.querySelector(".mobile-menu").style.width = "0";
-    document.querySelector(".opacity-mobile").classList.remove("mobile")
+    let modal = document.querySelector(".modal");
+    modal.style.display = "block";
 }
 
+function removeNavMenu(){
+    let modal = document.querySelector(".modal");
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.querySelector(".modal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
