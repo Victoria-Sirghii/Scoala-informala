@@ -89,11 +89,11 @@ main{
 .subtotal p{
     margin: 20px 0;
 }
-.warningText{
+/* .warningText{
     position: absolute;
     color: rgb(212, 35, 35);
     display: none;
-}
+} */
 .loading{
     display: none;
 }
@@ -136,9 +136,9 @@ responsive table*/
     main h1{
         margin: 30px 0 10px 0;
     }
-    .warningText {
+    /* .warningText {
         position: initial;
-    }
+    } */
     table, thead, tbody, th, td, tr {
         display: block;
     }

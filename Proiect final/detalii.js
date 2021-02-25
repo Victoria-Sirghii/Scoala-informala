@@ -21,14 +21,8 @@ async function getProductsList(){
     getCartLenght();
 }
 
-async function ajax(url, method, body){
-    let response = await fetch(url+".json",{
-        method: method, 
-        body: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json'
-            }
-    });
+async function ajax(url){
+    let response = await fetch(url+".json");
     return await response.json();
 }
 
@@ -79,11 +73,10 @@ function drawCarousel(){
 function increment(){
     let grams = parseInt(document.querySelector(".grams").innerText);
     let price = parseInt(document.querySelector(".price").innerText)
-    let productStock = product.productStock;
 
-    if(grams === productStock){
+    if(grams === parseInt(product.productStock)){
         document.querySelector(".warning").style.display = "block";
-        return
+        return;
     }else{
         price = price + parseInt(product.productPrice);
         document.querySelector(".price").innerText = price.toFixed(2);
@@ -91,6 +84,7 @@ function increment(){
     }
 }
 function decrement(){
+    document.querySelector(".warning").style.display = "none";
     let grams = parseInt(document.querySelector(".grams").innerText);
     let price = parseInt(document.querySelector(".price").innerText)
     if(grams === 100){
@@ -102,88 +96,72 @@ function decrement(){
     }
 }
 
-let urlCart = "https://e-shop-e08d6-default-rtdb.europe-west1.firebasedatabase.app/shoppingCart/";
-let productsCart = {};
-
-async function getCartList(){
-    productsCart = await ajax(urlCart);
-}
-
-async function addToCart(){
-    let quantity = document.querySelector(".grams").innerText;
-    let findProduct = false;
-    let keyIndex = "";
-    let oldQuantity = "";
-
-    if(productsCart !== null){
-        for(let [key, item] of Object.entries(productsCart)){
-            if(id === item.id){
-                keyIndex = key;
-                findProduct = true;
-                oldQuantity = item.quantity
+function addToCart(){
+    let quantity = parseInt(document.querySelector(".grams").innerText);
+    let oldQuantity = ""
+    let localCart = localStorage.getItem("cart");
+    let cart = []
+    let found = false;
+    if (localCart !== null){
+        cart = JSON.parse(localCart)
+    }
+    for(let item in cart){
+        if(id === cart[item].id){
+            found = true;
+            oldQuantity = parseInt(cart[item].quantity)
+            if((oldQuantity + quantity) < parseInt(product.productStock)){
+                cart[item].quantity += quantity;
+            }else{
+                cart[item].quantity = product.productStock;
+                document.querySelector(".stockAvailable").innerText = product.productStock;
+                document.querySelector(".warning2").style.display = "block";
             }
-    }}
-
-    if(findProduct === false){
-        productsCart = await ajax(urlCart, "POST", 
-            {
-                "id": id,
-                "quantity": quantity,
-            })
-        await getCartList()
-        getCartLenght();
-    }else{
-        //verific daca stocul a fost depasit
-        if((parseInt(quantity) + parseInt(oldQuantity)) > product.productStock){
-            document.querySelector(".stockAvailable").innerText = product.productStock;
-            document.querySelector(".warning2").style.display = "block";
-            productsCart = await ajax(urlCart + keyIndex,"PUT", 
-                {
-                    "id": id,
-                    "quantity": product.productStock,
-                })
-            await getCartList()
-        }else{
-            //Daca editez cantitatea produsului adaugat deja in cos,
-            //in cos va aparea produsul o singura data cu cantitatea adunata
-            productsCart = await ajax(urlCart + keyIndex,"PUT", 
-            {
-                "id": id,
-                "quantity": parseInt(quantity) + parseInt(oldQuantity),
-            })
-            await getCartList()
+            break;
         }
     }
+    if(found === false){
+        if(quantity > parseInt(product.productStock)){
+            quantity = product.productStock;
+            document.querySelector(".stockAvailable").innerText = product.productStock;
+            document.querySelector(".warning2").style.display = "block";
+        }
+        cart.push({id: id, quantity: quantity })
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    getCartLenght()
 }
 
 async function addToCart2(id){
-    let findProduct = false;
-
-    //verific daca produsul a fost adaugat deja in cos
-    if(productsCart !== null){
-        for(let item in productsCart){
-            if(id === productsCart[item].id){
-                findProduct = true;
-            }
-    }}
-
-    if(findProduct === false){
-        productsCart =  await ajax(urlCart, "POST", 
-            {
-                "id": id,
-                "quantity": "100",
-            })
-        await getCartList()
-        getCartLenght();
-    }else{
-        alert("This product has already been added. Check your cart.");
+    let localCart = localStorage.getItem("cart");
+    let cart = []
+    let found = false;
+    if (localCart !== null){
+        cart = JSON.parse(localCart)
     }
+    for(let item in cart){
+        if(id === cart[item].id){
+            alert("This product has already been added. Check your cart.");
+            found = true;
+            break;
+        }
+    }
+    if(found === false){
+        cart.push({id: id, quantity: 100 })
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    getCartLenght()
 }
 
 function getCartLenght(){
-    if(productsCart !== null){
-        let objectLenght = Object.keys(productsCart).length;
-        document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
-        document.querySelector(".cartLenght2").innerText = "(" + objectLenght +  ")";
-    } 
+    let localCart = localStorage.getItem("cart");
+    let cart = []
+    if (localCart !== null){
+        cart = JSON.parse(localCart)
+    }
+        if(cart !== null){
+            let objectLenght = cart.length;
+            document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
+            document.querySelector(".cartLenght2").innerText = "(" + objectLenght +  ")";
+        } 
 }
+

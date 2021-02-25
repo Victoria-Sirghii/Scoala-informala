@@ -2,21 +2,11 @@ let urlProductsList = "https://e-shop-e08d6-default-rtdb.europe-west1.firebaseda
 let productsList = {};
 
 async function getProducts(){
-    document.querySelector(".loading").style.display = "block"
-    productsList = await ajax(urlProductsList);
+    document.querySelector(".loading").style.display = "block";
+    let response = await fetch(urlProductsList + ".json");
+    productsList = await response.json();
     drawProducts();
     document.querySelector(".loading").style.display = "none"
-}
-
-async function ajax(url, method, body){
-    let response = await fetch(url+".json",{
-        method: method, 
-        body: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json'
-            }
-    });
-    return await response.json();
 }
 
 function drawProducts(){
@@ -47,7 +37,7 @@ function drawProducts(){
                     html += `
                     <div class="teaBox">
                         <div class="productCart">
-                            <img class="teaImg" src="${product.image}">
+                        <a href="detalii.html?id=${id}"><img class="teaImg" src="${product.image}"></a>
                         </div>
                         <p class="teaName">${product.productName}</p>
                         <div class="price">
@@ -83,42 +73,35 @@ function showProducs(elem){
     getProducts()
 }
 
-let urlCart = "https://e-shop-e08d6-default-rtdb.europe-west1.firebasedatabase.app/shoppingCart/";
-let productsCart = {};
-
-async function getCartList(){
-    productsCart = await ajax(urlCart);
-    getCartLenght();
-}
-
-async function addToCart(id){
-    let findProduct = false;
-
-    //verific daca produsul a fost adaugat deja in cos
-    if(productsCart !== null){
-        for(let item in productsCart){
-            if(id === productsCart[item].id){
-                findProduct = true;
-            }
-    }}
-
-    if(findProduct === false){
-        productsCart =  await ajax(urlCart, "POST", 
-            {
-                "id": id,
-                "quantity": "100",
-            })
-        await getCartList()
-        getCartLenght();
-    }else{
-        alert("This product has already been added. Check your cart.");
+function addToCart(id){
+    let localCart = localStorage.getItem("cart");
+    let cart = []
+    let found = false;
+    if (localCart !== null){
+        cart = JSON.parse(localCart)
     }
+    for(let item in cart){
+        if(id === cart[item].id){
+            alert("This product has already been added. Check your cart.");
+            found = true;
+            break;
+        }
+    }
+    if(found === false){
+        cart.push({id: id, quantity: 100 })
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    getCartLenght()
 }
-
 function getCartLenght(){
-    if(productsCart !== null){
-        let objectLenght = Object.keys(productsCart).length;
-        document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
-        document.querySelector(".cartLenght2").innerText = "(" + objectLenght +  ")";
-    } 
+    let localCart = localStorage.getItem("cart");
+    let cart = []
+    if (localCart !== null){
+        cart = JSON.parse(localCart)
+    }
+        if(cart !== null){
+            let objectLenght = cart.length;
+            document.querySelector(".cartLenght").innerText = "(" + objectLenght +  ")";
+            document.querySelector(".cartLenght2").innerText = "(" + objectLenght +  ")";
+        } 
 }
