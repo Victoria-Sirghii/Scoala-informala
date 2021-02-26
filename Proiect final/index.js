@@ -24,8 +24,9 @@ function drawProducts(){
                     </div>
                     <div class="buttonsCart">
                         <a href="detalii.html?id=${id}"><button class="details">Details</button></a>
-                        <a href="#" onclick="addToCart('${id}'); event.preventDefault();"><button class="addCart">Add to cart</button></a>
+                        <button class="addCart" onclick="addToCart('${id}'); event.preventDefault();">Add to cart</button>
                     </div>
+                    <div id="snackbar">Verify your cart please, we have just ${product.productStock} g in stock</div>
                 </div>
             `
             document.querySelector(".productsBox").innerHTML = html;
@@ -45,8 +46,9 @@ function drawProducts(){
                         </div>
                         <div class="buttonsCart">
                             <a href="detalii.html?id=${id}"><button class="details">Details</button></a>
-                            <a href="#" onclick="addToCart('${id}'); event.preventDefault();"><button class="addCart">Add to cart</button></a>
+                            <button class="addCart" onclick="addToCart('${id}'); event.preventDefault();">Add to cart</button>
                         </div>
+                        <div id="snackbar">Verify your cart please, we have just ${product.productStock} in stock</div>
                     </div>
                 `
                 }
@@ -55,7 +57,7 @@ function drawProducts(){
         }
     }
 }
-
+/* <a href="#" onclick="addToCart('${id}'); event.preventDefault();"><button class="addCart">Add to cart</button></a> */
 let checked = [];
 
 function showProducs(elem){
@@ -75,18 +77,33 @@ function showProducs(elem){
 
 function addToCart(id){
     let localCart = localStorage.getItem("cart");
+    let productStock = "";
     let cart = []
     let found = false;
     if (localCart !== null){
         cart = JSON.parse(localCart)
     }
-    for(let item in cart){
-        if(id === cart[item].id){
-            alert("This product has already been added. Check your cart.");
-            found = true;
-            break;
+
+    for(let item in productsList){
+        if(item === id){
+            productStock = productsList[item].productStock;
         }
     }
+
+    for(let item in cart){
+        if(id === cart[item].id){
+            found = true;
+            cart[item].quantity = parseInt(cart[item].quantity) + 100;
+            //in cazul in care depaseste cantitatea afisez toast
+            if(parseInt(productStock) < cart[item].quantity){
+                let x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                return;
+            }
+        }
+    }
+
     if(found === false){
         cart.push({id: id, quantity: 100 })
     }

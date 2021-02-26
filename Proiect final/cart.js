@@ -42,6 +42,7 @@ function drawCart(){
                             <p class="stock"><span class="grams">${cart[i].quantity}</span> g</p>
                             <button class="increment stock" onclick="increment('${cart[i].id}'); event.preventDefault()">+</button>
                         </div>
+                        <div id="snackbar">More quantity is not in stock.</div>
                     </td>
                     <td>$ <span class="total">${((parseInt(cart[i].quantity) * parseInt(product.productPrice))/parseInt("100")).toFixed(2)}</span></td>
                     <td><a href="#" class="removeBtn" onclick="removeItem('${i}','${product.productName}')">Remove</a></td>
@@ -106,7 +107,9 @@ function increment(id){
     for(let i = 0; i < cart.length; i++){
         if(cart[i].id === id){
             if(parseInt(cart[i].quantity) === parseInt(stock)){
-                alert("More quantity is not in stock")
+                let x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1000);
                 return;
             }
             cart[i].quantity = parseInt(cart[i].quantity) + 100;
