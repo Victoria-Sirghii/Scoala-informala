@@ -109,7 +109,7 @@ function increment(id){
             if(parseInt(cart[i].quantity) === parseInt(stock)){
                 let x = document.getElementById("snackbar");
                 x.className = "show";
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1000);
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
                 return;
             }
             cart[i].quantity = parseInt(cart[i].quantity) + 100;

@@ -67,36 +67,38 @@
             </table>
         </section>
     </div>
-    <form class="addBox hidden">
-        <h2>Add product</h2>
-        <div class="option">
-            <label for="typeOfTea">Type of tea*</label>
-            <input type="text" id="typeOfTea">
-        </div>
-        <div class="option">
-            <label for="productName">Name*</label>
-            <input type="text" id="productName">
-        </div>
-        <div class="option">
-            <label for="img">Image</label>
-            <input type="text" id="img">
-        </div>
-        <div class="option">
-            <label for="productDescription">Description</label>
-            <textarea rows="6" cols="55" id="productDescription"></textarea>
-        </div>
-        <div class="option">
-            <label for="productPrice">Price</label>
-            <input type="text" id="productPrice">
-        </div>
-        <div class="option">
-            <label for="productStock">Stock</label>
-            <input type="text" id="productStock">
-        </div>
-        <div class="buttons">
-            <button onclick="addProduct(event);"class="saveBtn"><i class="fas fa-plus plusIcon"></i>SAVE</button>
-            <button onclick="hideAddBox();" class="cancelBtn">CANCEL</button>
-        </div>
-    </form>
+    <div class="add-product-box">
+        <form class="addBox hidden">
+            <h2>Add product</h2>
+            <div class="option">
+                <label for="typeOfTea">Type of tea*</label>
+                <input type="text" id="typeOfTea">
+            </div>
+            <div class="option">
+                <label for="productName">Name*</label>
+                <input type="text" id="productName">
+            </div>
+            <div class="option">
+                <label for="img">Image</label>
+                <input type="text" id="img">
+            </div>
+            <div class="option">
+                <label for="productDescription">Description</label>
+                <textarea rows="6" cols="55" id="productDescription"></textarea>
+            </div>
+            <div class="option">
+                <label for="productPrice">Price</label>
+                <input type="text" id="productPrice">
+            </div>
+            <div class="option">
+                <label for="productStock">Stock</label>
+                <input type="text" id="productStock">
+            </div>
+            <div class="buttons">
+                <button onclick="addProduct(event);"class="saveBtn"><i class="fas fa-plus plusIcon"></i>SAVE</button>
+                <button onclick="hideAddBox();" class="cancelBtn">CANCEL</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
