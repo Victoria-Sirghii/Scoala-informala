@@ -6,37 +6,39 @@
     <script src="vreme.js" type="text/javascript"></script>
 </head>
 <body>
-    <header>
-        <input type="text" id="inputText" placeholder="Write a city">
-        <button onclick="actualWeather()">Show weather</button>
-        <button onclick="forecast()">Show forecast</button>
-    </header>
-    <div class="currentWeather">
-        <h2 id="text1">Current Weather</h2>
-        <hr>
-        <div class="details">
-            <div class="information">
-                <div>Description:</div>
-                <div>Humidity:</div>
-                <div>Pressure:</div>
-                <div>Current temperature:</div>
-                <div>Minimum of the day:</div>
-                <div>Maximum of the day:</div>
-            </div>
-            <div id="map">
+    <div class="container">
+        <header>
+            <input type="text" id="inputText" placeholder="Write a city">
+            <button onclick="actualWeather()">Show weather</button>
+            <button onclick="forecast()">Show forecast</button>
+        </header>
+        <div class="currentWeather">
+            <h2 id="text1">Current Weather</h2>
+            <hr>
+            <div class="details">
+                <div class="information">
+                    <div>Description:</div>
+                    <div>Humidity:</div>
+                    <div>Pressure:</div>
+                    <div>Current temperature:</div>
+                    <div>Minimum of the day:</div>
+                    <div>Maximum of the day:</div>
+                </div>
+                <div id="map">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="forecastBox">
-        <h2 id="text2">Weather for the following days</h2>
-        <hr>
-        <div class="forecast">
-            <div class="dayBox"></div>
-            <div class="dayBox"></div>
-            <div class="dayBox"></div>
-            <div class="dayBox"></div>
-            <div class="dayBox"></div>
-            <div class="dayBox emptyDiv"></div>
+        <div class="forecastBox">
+            <h2 id="text2">Weather for the following days</h2>
+            <hr>
+            <div class="forecast">
+                <div class="dayBox"></div>
+                <div class="dayBox"></div>
+                <div class="dayBox"></div>
+                <div class="dayBox"></div>
+                <div class="dayBox"></div>
+                <div class="dayBox emptyDiv"></div>
+            </div>
         </div>
     </div>
 </body>

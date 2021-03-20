@@ -28,16 +28,16 @@ function drawWeather(){
 function googleMap(){
     let inputValue = document.querySelector("#inputText").value;
     let google = `
-    <div class="mapouter">
+    <div class="mapouter googleMap">
         <div class="gmap_canvas">
-            <iframe width="790" height="200" id="gmap_canvas" 
+            <iframe width="100%" height="200" id="gmap_canvas" 
                 src="https://maps.google.com/maps?q=${inputValue}&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
             </iframe>
             <a href="https://putlocker-is.org"></a><br>
-            <style>.mapouter{position:relative;text-align:right;height:200px;width:790px;}</style>
+            <style>.mapouter{text-align:right;height:200px;width:790px;}</style>
             <a href="https://google-map-generator.com">google map iframe code</a>
-            <style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;width:790px;}</style>
+            <style>.gmap_canvas {overflow:hidden;background:none!important;height:200px;}</style>
         </div>
     </div>`;
     document.querySelector("#map").innerHTML = google;
