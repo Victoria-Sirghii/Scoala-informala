@@ -64,6 +64,13 @@ async function addProduct(event){
     let productPrice = document.querySelector("#productPrice").value;
     let productStock = document.querySelector("#productStock").value;
 
+    if( (typeOfTea && image && productName && productDescription && productPrice && productStock)  === ""){
+        let x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+                return;
+    }
+
     if(editIndex === -1){
         await ajax(urlProductsList, "POST", 
         {
@@ -79,7 +86,6 @@ async function addProduct(event){
         await edit2()
     }
 
-    document.querySelector(".addBox").reset();
     hideAddBox();
 }
 
@@ -138,6 +144,7 @@ function showAddBox(){
     document.querySelector(".productsTable").classList.add("hidden")
 }
 function hideAddBox(){
+    document.querySelector(".addBox").reset();
     document.querySelector(".addBox").classList.add("hidden")
     document.querySelector(".teaList").classList.remove("hidden")
     document.querySelector(".productsTable").classList.remove("hidden")

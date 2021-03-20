@@ -66,7 +66,6 @@ async function removeItem(idx, name){
     if(cart.length === 0){
         hideTable();
     }
-    
     document.querySelector(".loading").style.display = "none";
 }
 

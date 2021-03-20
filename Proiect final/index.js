@@ -57,7 +57,7 @@ function drawProducts(){
         }
     }
 }
-/* <a href="#" onclick="addToCart('${id}'); event.preventDefault();"><button class="addCart">Add to cart</button></a> */
+
 let checked = [];
 
 function showProducs(elem){
